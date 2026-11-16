@@ -127,6 +127,28 @@ details p{color:var(--mute);margin:12px 0 0}
 footer{background:#08141f;color:#8597a8;font-size:.85rem;padding:36px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 
+/* live strip */
+.live{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.08)}
+.live div{background:var(--ink);padding:18px 20px}
+.live b{display:block;font:700 1.5rem Fraunces;color:#f3d58f}
+.live span{font-size:.82rem;color:var(--text-on-ink-2)}
+@media (max-width:760px){.live{grid-template-columns:1fr 1fr}}
+/* commands + balance */
+.cmds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:40px;align-items:start}
+.cmds>*{min-width:0}
+@media (max-width:900px){.cmds{grid-template-columns:minmax(0,1fr)}}
+.cmdlist{list-style:none;padding:0;margin:0}
+.cmdlist li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px dashed var(--line)}
+.cmdlist code{font:600 .95rem ui-monospace,Menlo,Consolas,monospace;color:var(--tide-deep);white-space:nowrap}
+.cmdlist span{color:var(--mute);font-size:.92rem;text-align:right}
+.check{display:flex;gap:10px;margin:14px 0 8px}
+.check input{flex:1;min-width:0;padding:12px 14px;border-radius:12px;border:1px solid var(--line);font:inherit;background:#fff}
+.check button{border:0;cursor:pointer}
+.stat{width:100%;border-collapse:collapse;font-size:.95rem}
+.stat td{padding:8px 0;border-top:1px dashed var(--line)}
+.stat td:last-child{text-align:right;font-weight:600}
+.stat tr.hl td{color:var(--tide-deep);font-size:1.05rem}
+.muted{color:var(--mute);font-size:.88rem}
 /* motion */
 .bob{animation:bob 5s ease-in-out infinite;transform-origin:center}
 @keyframes bob{50%{transform:translateY(-6px) rotate(-1deg)}}
@@ -148,7 +170,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       Keelhaven
     </a>
     <div class="navlinks">
-      <a href="#why">Why</a><a href="#how">How it works</a><a href="#rules">Rules</a><a href="#risks">Risks</a><a href="#faq">FAQ</a>
+      <a href="#why">Why</a><a href="#how">How it works</a><a href="#talk">Commands</a><a href="#rules">Rules</a><a href="#risks">Risks</a><a href="#faq">FAQ</a>
       <a class="btn btn-brass" href="#join">Join the pool</a>
     </div>
   </div>
@@ -167,8 +189,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <div class="chips">
         <span class="chip">Dividends paid in HIVE</span>
         <span class="chip">Your share grows with every gain</span>
-        <span class="chip">No deposit or withdrawal fees</span>
-        <span class="chip">Every transfer on chain</span>
+        <span class="chip">EDSI or SWAP.HIVE in</span>
+        <span class="chip">Running 24/7</span>
+        <span class="chip">Check &amp; withdraw with a comment</span>
       </div>
     </div>
 
@@ -209,6 +232,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     </svg>
   </div>
 </header>
+
+<div class="live on-ink" id="live" aria-live="polite">
+  <div><b data-k="value">—</b><span>EDSI in the pool</span></div>
+  <div><b data-k="unit">—</b><span>EDSI per unit</span></div>
+  <div><b data-k="inv">—</b><span>investors</span></div>
+  <div><b data-k="run">—</b><span>last pool check</span></div>
+</div>
 
 <section id="why">
   <div class="wrap">
@@ -306,28 +336,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <div class="reveal">
       <span class="eyebrow">How it works</span>
       <h2>Four calm steps</h2>
-      <p class="lead">No apps, no sign-ups. Just Hive transfers with clear memos.</p>
+      <p class="lead">No apps, no sign-ups. Just Hive transfers and comments.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
         <svg viewBox="0 0 56 56" aria-hidden="true"><rect x="6" y="14" width="44" height="30" rx="5" fill="none" stroke="#d4a64a" stroke-width="2.5"/><path d="M8 17l20 14 20-14" fill="none" stroke="#d4a64a" stroke-width="2.5"/><circle cx="44" cy="14" r="8" fill="#3fb8af"/><path d="M40.5 14h7M44 10.5v7" stroke="#0b1b2b" stroke-width="2.2"/></svg>
-        <h3>Send EDSI</h3>
-        <p>Send EDSI on Hive Engine to the pool with <strong>your Hive name as the memo</strong>. That's your receipt.</p>
-      </div>
-      <div class="step reveal">
-        <svg viewBox="0 0 56 56" aria-hidden="true"><path d="M16 8h24M16 48h24" stroke="#d4a64a" stroke-width="2.5" stroke-linecap="round"/><path d="M18 8c0 12 20 12 20 20S18 36 18 48M38 8c0 12-20 12-20 20s20 8 20 20" fill="none" stroke="#d4a64a" stroke-width="2.5"/><path d="M22 44h12l-6-5z" fill="#3fb8af"/></svg>
-        <h3>Settle in for 7 days</h3>
-        <p>New deposits settle in for a week before they start earning. This keeps it fair for everyone already aboard.</p>
+        <h3>Send EDSI or SWAP.HIVE</h3>
+        <p>Send it on Hive-Engine to @dlmmqb.com-5. <strong>No memo needed</strong>; it's credited to you.</p>
       </div>
       <div class="step reveal">
         <svg viewBox="0 0 56 56" aria-hidden="true"><ellipse cx="28" cy="40" rx="16" ry="5" fill="none" stroke="#d4a64a" stroke-width="2.5"/><path d="M12 40v-6c0 3 7 5 16 5s16-2 16-5v6" fill="none" stroke="#d4a64a" stroke-width="2.5"/><ellipse cx="28" cy="28" rx="16" ry="5" fill="#d4a64a" opacity=".25" stroke="#d4a64a" stroke-width="2.5"/><path d="M28 6v12M22 12l6-6 6 6" fill="none" stroke="#3fb8af" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Own units</h3>
-        <p>Your EDSI becomes pool units. Trading gains raise what each unit is worth, so your share quietly grows.</p>
+        <h3>Get units right away</h3>
+        <p>EDSI becomes pool units within a minute. SWAP.HIVE is converted first with a patient bid, then becomes units.</p>
       </div>
       <div class="step reveal">
-        <svg viewBox="0 0 56 56" aria-hidden="true"><path d="M28 6c8 12 14 19 14 27a14 14 0 0 1-28 0c0-8 6-15 14-27z" fill="#3fb8af" opacity=".25" stroke="#3fb8af" stroke-width="2.5"/><path d="M22 34a7 7 0 0 0 7 7" fill="none" stroke="#e9eef3" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Collect dividends</h3>
-        <p>Whenever EDSI dividends arrive, your share is sent <strong>straight to your wallet in HIVE</strong>.</p>
+        <svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8 44 L20 30 L30 36 L48 14" fill="none" stroke="#d4a64a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 14h8v8" fill="none" stroke="#d4a64a" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="30" r="3" fill="#3fb8af"/><circle cx="30" cy="36" r="3" fill="#3fb8af"/></svg>
+        <h3>Watch them grow</h3>
+        <p>Every gain raises what each unit is worth. Dividends arrive <strong>in your wallet as HIVE</strong>, shared by time held.</p>
+      </div>
+      <div class="step reveal">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><rect x="7" y="10" width="42" height="28" rx="7" fill="none" stroke="#3fb8af" stroke-width="2.5"/><path d="M16 38v8l9-8" fill="none" stroke="#3fb8af" stroke-width="2.5" stroke-linejoin="round"/><text x="28" y="29" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="12" font-weight="700" fill="#d4a64a">!kh</text></svg>
+        <h3>Check or leave by comment</h3>
+        <p>Comment <code>!kh status</code> or <code>!kh withdraw all</code> under the command post. Withdrawals are paid in EDSI.</p>
       </div>
     </div>
   </div>
@@ -366,6 +396,46 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <h2>Your units stay put. Their value climbs.</h2>
       <p class="lead">When you join, your EDSI is converted into units at that day's value. You keep the same number of units for as long as you stay.</p>
       <p>When the pool gains, nobody has to recalculate anything: each unit is simply worth a bit more. When you leave, your units are turned back into EDSI at their value on that day. Your percentage of the pool only changes when people join or leave, never because someone else was luckier with timing.</p>
+        <p>Your status always shows it plainly: what you deposited, what you withdrew, what your units are worth now, and your profit.</p>
+    </div>
+  </div>
+</section>
+
+<section id="talk" class="on-ink" style="background:var(--ink-2)">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Talk to the pool</span>
+      <h2>Your account, one comment away</h2>
+      <p class="lead">Write a command as a new comment under the <a href="https://peakd.com/keelhaven/@dlmmqb.com-5/keelhaven-commands-check-join-and-withdraw-right-here" target="_blank" rel="noopener" style="color:#f3d58f">Keelhaven commands post</a>. The pool answers within a minute or two.</p>
+    </div>
+    <div class="cmds">
+      <div class="card reveal">
+        <ul class="cmdlist">
+          <li><code>!kh status</code><span>units, value, profit, dividends</span></li>
+          <li><code>!kh pool</code><span>pool value and unit worth</span></li>
+          <li><code>!kh history</code><span>your last 5 actions</span></li>
+          <li><code>!kh withdraw all</code><span>everything, in EDSI</span></li>
+          <li><code>!kh withdraw 50</code><span>an amount, in EDSI</span></li>
+          <li><code>!kh cancel</code><span>stop a withdrawal still waiting</span></li>
+          <li><code>!kh help</code><span>the list</span></li>
+        </ul>
+        <p class="muted" style="margin:12px 0 0">Long form works too: <code>!keelhaven status</code>. Up to 10 commands a day per account.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="margin-bottom:.2em">Check any account</h3>
+        <p class="muted" style="margin:0">Same numbers as <code>!kh status</code>, read live from the pool.</p>
+        <form class="check" id="checkForm"><input id="who" placeholder="hive account name" autocomplete="off" aria-label="Hive account name"><button class="btn btn-brass" type="submit">Check</button></form>
+        <table class="stat" id="statTable"><tbody>
+          <tr><td>Units</td><td data-s="units">—</td></tr>
+          <tr><td>Each unit is worth</td><td data-s="unit">—</td></tr>
+          <tr><td>Deposited in total</td><td data-s="deposited">—</td></tr>
+          <tr><td>Withdrawn in total</td><td data-s="withdrawn">—</td></tr>
+          <tr><td>Value now</td><td data-s="value">—</td></tr>
+          <tr class="hl"><td>Profit</td><td data-s="profit">—</td></tr>
+          <tr><td>Dividends received</td><td data-s="dividends">—</td></tr>
+        </tbody></table>
+        <p class="muted" id="checkNote" style="margin:10px 0 0">Profit = value now + withdrawn − deposited.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -375,46 +445,46 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <div class="reveal">
       <span class="eyebrow">House rules</span>
       <h2>Everything that touches your EDSI</h2>
-      <p class="lead">Short, plain, and the same for everyone, including the operator's own deposits.</p>
+      <p class="lead">Short, plain, and the same for everyone, including the operator's own deposits. The small joining and leaving fees stay in the pool, so the people who stay grow every time someone comes or goes.</p>
     </div>
 
     <div class="fees reveal">
       <div class="fee"><b>1%</b><span>of trading gains</span></div>
       <div class="fee"><b>1%</b><span>of dividends received</span></div>
-      <div class="fee"><b>0</b><span>deposit fees</span></div>
-      <div class="fee"><b>0</b><span>withdrawal fees</span></div>
+      <div class="fee"><b>0.05%</b><span>to join, kept by the pool</span></div>
+      <div class="fee"><b>0.05%</b><span>to leave, kept by the pool</span></div>
     </div>
 
     <div class="rules">
       <div class="rule reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1f8a83" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 8l9 6 9-6"/></svg></div>
-        <h3>Deposits are EDSI only</h3>
-        <p>Send EDSI on Hive Engine with <strong>your Hive account name as the memo</strong>. A friend can deposit for you by putting your name in the memo. A blank memo credits the sender. Other tokens aren't deposits; they're returned by hand.</p>
+        <h3>Joining: EDSI or SWAP.HIVE</h3>
+        <p><strong>Leave the memo empty</strong> and it's yours. To gift a friend, put their Hive name. EDSI is preferred; SWAP.HIVE is converted for you at a patient price. A memo of <code>pool</code> is a donation to everyone, with no units for you.</p>
       </div>
       <div class="rule reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1f8a83" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <h3>A 7-day settling period</h3>
-        <p>New deposits earn nothing for their first <strong>7 days</strong>, then become units. This stops anyone from hopping in just before a dividend and hopping out right after.</p>
+        <h3>Dividends by time held</h3>
+        <p>Each dividend is shared by <strong>units × days held</strong> since the last one. Join on Sunday and you get about a day's share, not a week's. Leave before a dividend and that period's share stays with the people who stayed.</p>
       </div>
       <div class="rule reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1f8a83" stroke-width="2"><path d="M12 3c4 6 7 9 7 13a7 7 0 0 1-14 0c0-4 3-7 7-13z"/></svg></div>
-        <h3>Dividends in HIVE</h3>
-        <p>Whenever EDSI dividends reach the pool, on whatever day they come, they're split by units and sent to you as <strong>L1 HIVE</strong>. Tiny amounts wait until they reach 0.001 HIVE, so nothing is lost.</p>
+        <h3>Paid in HIVE, any day</h3>
+        <p>Whenever EDSI dividends reach the pool, on whatever day they come, your share goes to your wallet as <strong>L1 HIVE</strong>. Tiny amounts wait until they reach 0.001 HIVE, so nothing is lost.</p>
       </div>
       <div class="rule reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1f8a83" stroke-width="2"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
-        <h3>Withdrawals in EDSI</h3>
-        <p>Ask for <strong>all</strong> or <strong>an amount</strong>. Your units stop earning at that moment and your EDSI is sent from what's on hand. If the pool is holding HIVE after a rise, the rest follows as EDSI comes back, and every memo says exactly what's left.</p>
+        <h3>Withdraw with a comment</h3>
+        <p>Comment <code>!kh withdraw all</code> or an amount. Your units stop earning at once and EDSI is sent from what's on hand. If the pool is holding HIVE after a rise, the rest follows as EDSI comes back, and every memo says what's left.</p>
       </div>
       <div class="rule reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1f8a83" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></div>
         <h3>Changed your mind?</h3>
-        <p>While part of a withdrawal is still waiting, you can cancel it. The unpaid part rejoins the pool as a new deposit with a fresh 7-day settling period.</p>
+        <p>While part of a withdrawal is still waiting, comment <code>!kh cancel</code>. The unpaid part goes straight back into units, earning again.</p>
       </div>
       <div class="rule reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1f8a83" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Open books</h3>
-        <p>Every deposit, dividend and payout is a public Hive transaction with a clear memo. Ask any time and you'll get your units, value, pending dividends and any open withdrawal.</p>
+        <h3>Open books, 24/7</h3>
+        <p>The pool runs around the clock in the cloud. Every deposit, dividend and payout is a public Hive transaction with a clear memo, and anyone can check any account above.</p>
       </div>
     </div>
 
@@ -424,7 +494,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
         <span class="eyebrow">Leaving the harbor</span>
         <h2>Withdrawals arrive in full, sometimes in parts</h2>
         <p class="lead">Part of the pool may be in HIVE right after EDSI has risen. You get every EDSI that's available straight away, and the rest arrives as the pool buys EDSI back.</p>
-        <p>Each transfer's memo tells you what was sent and what's still to come, ending with <em>"withdrawal complete"</em>. The amount you're owed is locked in on the day you ask, and it's always paid in EDSI.</p>
+        <p>Each transfer's memo tells you what was sent and what's still to come, ending with <em>"withdrawal complete"</em>. The amount you're owed is locked in the moment you comment, and it's always paid in EDSI.</p>
       </div>
       <svg class="reveal" viewBox="0 0 480 280" role="img" aria-label="A dock where one crate of EDSI is delivered now and two outlined crates follow later, with a memo tag showing sent and remaining amounts">
         <defs><clipPath id="wdclip"><rect width="480" height="280" rx="18"/></clipPath></defs>
@@ -452,10 +522,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <div class="risks">
       <div class="risk reveal"><h3>EDSI's price isn't guaranteed</h3><p>EDSI has always drifted back towards 1 HIVE, but there's no promise it always will. If it falls and stays down, the pool's value falls with it.</p></div>
       <div class="risk reveal"><h3>Gains depend on movement</h3><p>Quiet markets mean few trades and little or no trading gain. Some weeks there may be nothing extra at all.</p></div>
-      <div class="risk reveal"><h3>Withdrawals can take time</h3><p>If the pool is holding HIVE when you leave, part of your EDSI waits until the pool can buy EDSI back below 1 HIVE.</p></div>
+      <div class="risk reveal"><h3>Withdrawals can take time</h3><p>If the pool is holding HIVE when you leave, part of your EDSI waits until the pool buys EDSI back cheaper than it sold.</p></div>
       <div class="risk reveal"><h3>Dividends can be a little lower</h3><p>EDSI the pool has sold earns no dividends until it's bought back, so dividends per unit can sometimes be below what holding EDSI yourself would earn.</p></div>
-      <div class="risk reveal"><h3>The operator holds the keys</h3><p>Funds sit in one Hive account controlled by the operator. You're trusting the operator, the code, and the operator's computer.</p></div>
-      <div class="risk reveal"><h3>It runs when the computer runs</h3><p>The pool works while the operator's computer is online. Deposits, dividends and withdrawals are processed on the next run, which can be days later.</p></div>
+      <div class="risk reveal"><h3>The operator holds the keys</h3><p>Funds sit in one Hive account controlled by the operator, and the bot's keys are stored with a cloud provider. You're trusting the operator and the code.</p></div>
+      <div class="risk reveal"><h3>Cloud or node outages</h3><p>The pool runs 24/7 on a cloud service. If that service or the Hive-Engine nodes have a bad day, deposits, dividends and withdrawals simply wait until it's back.</p></div>
+      <div class="risk reveal"><h3>It keeps evolving</h3><p>The details of how the pool works may be improved over time. Changes that affect you are announced on Hive ahead of time.</p></div>
+      <div class="risk reveal"><h3>SWAP.HIVE takes patience</h3><p>SWAP.HIVE deposits wait as a bid until someone sells EDSI to them. In a quiet market that can take a while; you earn from the moment it converts.</p></div>
     </div>
     <p class="footnote" style="color:#8597a8;margin-top:30px">Nothing on this page is financial advice. Only put in what you're comfortable leaving for a while.</p>
   </div>
@@ -468,12 +540,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <h2>Frequently asked</h2>
     </div>
     <div class="reveal">
-      <details><summary>Do I still get EDSI dividends?</summary><p>Yes. The pool holds EDSI, so it receives EDSI dividends. Once your deposit has settled in, you get your share of every one of them, paid in HIVE to your wallet (minus the 1% dividend fee).</p></details>
-      <details><summary>Why can't I just withdraw in HIVE?</summary><p>You joined with EDSI, so you leave with EDSI. That keeps things fair for everyone in the pool, and you always know exactly what you'll get back.</p></details>
-      <details><summary>What happens if I deposit right before a dividend?</summary><p>That dividend goes to people already in the pool. Your deposit starts earning after its 7-day settling period, so everyone is treated the same.</p></details>
-      <details><summary>How do I check my balance?</summary><p>Message the operator on Discord and you'll get your units, their current value in EDSI, any dividends waiting to be paid, and any open withdrawal.</p></details>
-      <details><summary>Can I add more later?</summary><p>Any time. Each new deposit has its own 7-day settling period, then joins your existing units.</p></details>
-      <details><summary>Where does the 1% go?</summary><p>To the operator (@dlmmqb), for running and maintaining the pool. There are no other charges.</p></details>
+      <details><summary>Do I still get EDSI dividends?</summary><p>Yes. The pool holds EDSI, so it receives EDSI dividends, and your share is paid to your wallet in HIVE (minus the 1% dividend fee), based on how long you've held your units since the last dividend.</p></details>
+      <details><summary>Can I deposit SWAP.HIVE?</summary><p>Yes. The pool places a patient top bid and converts it to EDSI for you, usually cheaper than buying EDSI yourself in a hurry. You get units as it fills. EDSI is still preferred, since withdrawals are always paid in EDSI.</p></details>
+      <details><summary>What happens if I deposit right before a dividend?</summary><p>You get a share for the time you actually held, so about one day's worth if you joined the day before. The rest goes to the people who were in all week.</p></details>
+      <details><summary>How do I check my balance?</summary><p>Comment <code>!kh status</code> under the commands post, or type your account name in the checker above. Both show your units, what each unit is worth, what you deposited and withdrew, your profit and your dividends.</p></details>
+      <details><summary>Why are there joining and leaving fees?</summary><p>They're tiny (0.05% each way) and they stay in the pool. They reward the people who stay, since every arrival and departure leaves a little extra behind for them.</p></details>
+      <details><summary>Why can't I withdraw in HIVE?</summary><p>The pool runs on EDSI, so you leave with EDSI. That keeps it fair for everyone, and you always know exactly what you'll get.</p></details>
+      <details><summary>Can I add more later?</summary><p>Any time. New EDSI becomes units straight away and simply adds to what you have.</p></details>
+      <details><summary>Where do the fees go?</summary><p>The 1% on trading gains and 1% on dividends go to the operator (@dlmmqb) for running the pool. The 0.05% joining and leaving fees stay in the pool for investors.</p></details>
+      <details><summary>Can the way it works change?</summary><p>Yes, Keelhaven keeps improving as we learn from the market and from you. When something that affects your EDSI changes, it's shared on Hive first, so you always have time to read it and decide what suits you.</p></details>
       <details><summary>Is Keelhaven part of the EDSI project?</summary><p>No. Keelhaven is an independent community pool that holds EDSI. It isn't run by, endorsed by or affiliated with the EDSI project or @edsi-pay.</p></details>
     </div>
   </div>
@@ -483,13 +558,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   <div class="wrap">
     <span class="eyebrow">Come aboard</span>
     <h2>Ready to let your EDSI work?</h2>
-    <p class="lead">Say hello to the operator on Discord first, then send your EDSI on Hive Engine like this:</p>
+    <p class="lead">Send EDSI (or SWAP.HIVE) on Hive-Engine like this, and you're in:</p>
     <div class="memo">
       <span>token&nbsp;&nbsp;&nbsp;</span>EDSI<br>
       <span>to&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>dlmmqb.com-5<br>
-      <span>memo&nbsp;&nbsp;&nbsp;&nbsp;</span>your-hive-name
+      <span>memo&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#a9b8c6">(leave empty)</span>
     </div>
-    <div><a class="btn btn-brass" href="https://peakd.com/@dlmmqb" target="_blank" rel="noopener">Find @dlmmqb on Hive →</a></div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-brass" href="https://peakd.com/keelhaven/@dlmmqb.com-5/keelhaven-commands-check-join-and-withdraw-right-here" target="_blank" rel="noopener">Open the commands post →</a><a class="btn btn-ghost" href="https://peakd.com/@dlmmqb" target="_blank" rel="noopener">Say hi to @dlmmqb</a></div>
   </div>
 </section>
 
@@ -504,6 +579,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   // Fade sections in as they scroll into view.
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Live numbers straight from the pool (read-only). The page works fine without them.
+  const API = 'https://keelhaven.dlmmqb.workers.dev';
+  const fmt = (v, d = 3) => Number(v).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+  let unitWorth = null;
+  fetch(API + '/pool').then((r) => r.json()).then((p) => {
+    if (!p.value) return;
+    unitWorth = p.unitValue;
+    const ago = Math.max(0, Math.round((Date.now() - p.lastRun) / 60000));
+    const set = (k, v) => { const el = document.querySelector(`[data-k="${k}"]`); if (el) el.textContent = v; };
+    set('value', fmt(p.value, 0)); set('unit', Number(p.unitValue).toFixed(4)); set('inv', p.investors); set('run', ago <= 1 ? 'just now' : `${ago} min ago`);
+  }).catch(() => {});
+  document.getElementById('checkForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const who = document.getElementById('who').value.trim().toLowerCase().replace(/^@/, '');
+    const note = document.getElementById('checkNote');
+    if (!/^[a-z][a-z0-9-.]{2,15}$/.test(who)) { note.textContent = 'That doesn\'t look like a Hive account name.'; return; }
+    note.textContent = 'Checking…';
+    fetch(API + '/status?u=' + encodeURIComponent(who)).then((r) => r.json()).then((s) => {
+      const set = (k, v) => { document.querySelector(`[data-s="${k}"]`).textContent = v; };
+      if (!s.inPool && s.inPool !== undefined) { ['units','unit','deposited','withdrawn','value','profit','dividends'].forEach((k) => set(k, '—')); note.textContent = `@${who} isn't in Keelhaven yet.`; return; }
+      const sign = Number(s.profit) >= 0 ? '+' : '';
+      set('units', fmt(s.units, 4)); set('unit', unitWorth ? Number(unitWorth).toFixed(6) + ' EDSI' : '—');
+      set('deposited', fmt(s.deposited) + ' EDSI'); set('withdrawn', fmt(s.withdrawn) + ' EDSI'); set('value', fmt(s.value) + ' EDSI');
+      set('profit', `${sign}${fmt(s.profit)} EDSI (${sign}${s.profitPct}%)`); set('dividends', fmt(s.dividendsReceived) + ' HIVE');
+      note.textContent = `@${who}, live. Profit = value now + withdrawn − deposited.`;
+    }).catch(() => { note.textContent = 'Could not reach the pool right now. Try again in a minute.'; });
+  });
 </script>
 </body>
 </html>
