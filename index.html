@@ -65,6 +65,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 /* compare */
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.on-ink .card:not(.dark){color:var(--text)}
 .card.dark{background:var(--ink);border-color:var(--ink-3);color:var(--text-on-ink)}
 .card h3{display:flex;align-items:center;gap:10px}
 .tag{font:600 .72rem Inter;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
@@ -434,6 +435,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
           <tr><td>Value now</td><td data-s="value">—</td></tr>
           <tr class="hl"><td>Profit</td><td data-s="profit">—</td></tr>
           <tr><td>Dividends received</td><td data-s="dividends">—</td></tr>
+          <tr id="convRow" hidden><td>SWAP.HIVE converting</td><td data-s="converting">—</td></tr>
+          <tr id="oweRow" hidden><td>Withdrawal still to send</td><td data-s="owed">—</td></tr>
         </tbody></table>
         <p class="muted" id="checkNote" style="margin:10px 0 0">Profit = value now + withdrawn − deposited.</p>
       </div>
@@ -600,7 +603,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     note.textContent = 'Checking…';
     fetch(API + '/status?u=' + encodeURIComponent(who)).then((r) => r.json()).then((s) => {
       const set = (k, v) => { document.querySelector(`[data-s="${k}"]`).textContent = v; };
-      if (!s.inPool && s.inPool !== undefined) { ['units','unit','deposited','withdrawn','value','profit','dividends'].forEach((k) => set(k, '—')); note.textContent = `@${who} isn't in Keelhaven yet.`; return; }
+      const conv = Number(s.converting || 0), owe = Number(s.owed || 0);
+      document.getElementById('convRow').hidden = !(conv > 0); document.getElementById('oweRow').hidden = !(owe > 0);
+      if (conv > 0) set('converting', fmt(conv, 4) + ' SWAP.HIVE');
+      if (owe > 0) set('owed', fmt(owe) + ' EDSI');
+      if (!s.inPool && s.inPool !== undefined) {
+        ['units','unit','deposited','withdrawn','value','profit','dividends'].forEach((k) => set(k, '—'));
+        note.textContent = conv > 0 ? `@${who}'s SWAP.HIVE is waiting as a top bid. Units appear as soon as it fills.` : `@${who} isn't in Keelhaven yet.`;
+        return;
+      }
       const sign = Number(s.profit) >= 0 ? '+' : '';
       set('units', fmt(s.units, 4)); set('unit', unitWorth ? Number(unitWorth).toFixed(6) + ' EDSI' : '—');
       set('deposited', fmt(s.deposited) + ' EDSI'); set('withdrawn', fmt(s.withdrawn) + ' EDSI'); set('value', fmt(s.value) + ' EDSI');
