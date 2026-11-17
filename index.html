@@ -248,28 +248,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
         <span class="eyebrow">The drift</span>
         <h2>EDSI comes home to 1 HIVE. It just takes the scenic route.</h2>
         <p class="lead">EDSI is fund-backed, so its price keeps returning to about 1 HIVE. In between, buyers and sellers push it a little above or below. Holders hardly notice, but every one of those swings is an opportunity.</p>
-        <p>Keelhaven watches the market for you. When EDSI rises above 1 HIVE, the pool sells a little at each step up. When the price comes back down at least 1% below what it sold for, the pool buys that EDSI back. It never buys back at a loss, so each round trip ends with more EDSI than it started with, and that extra belongs to everyone in the pool, in proportion to their units.</p>
+        <p>Keelhaven watches the market for you. When buyers pay up for EDSI, the pool sells them small slices, and when someone posts a high bid, it sells into that bid at their price. When EDSI settles back, one patient bid near the price sellers usually accept buys it all back. It never buys back at a loss, so each round trip ends with more EDSI than it started with, and that extra belongs to everyone in the pool, in proportion to their units.</p>
+        <p>Every price comes from what EDSI actually traded at over the last 30 days, never from someone's bid, so nobody can bait the pool into a bad trade.</p>
       </div>
       <!-- DRIFT CHART -->
-      <svg class="reveal" viewBox="0 0 480 300" role="img" aria-label="EDSI price rising above 1 HIVE while the pool sells a little at each step, then the pool buys it all back once the price is 1% below its sell average, still above 1 HIVE">
+      <svg class="reveal" viewBox="0 0 480 300" role="img" aria-label="When EDSI rises, the pool sells small slices to buyers paying up; when it settles back, one buy-back bid near the patient price brings it all home, never above the sell average minus 1%">
         <rect width="480" height="300" rx="18" fill="#fffdf8" stroke="#d9cfbd"/>
         <text x="20" y="40" font-family="Inter" font-size="13" font-weight="600" fill="#1a2633">How the pool trades the drift</text>
         <line x1="20" y1="196.0" x2="460" y2="196.0" stroke="#a97c22" stroke-dasharray="5 6"/>
         <text x="458" y="211.0" text-anchor="end" font-family="Inter" font-size="10.5" font-weight="600" fill="#a97c22">1 HIVE</text>
-        <line x1="250" y1="157.3" x2="460" y2="157.3" stroke="#1f8a83" stroke-width="1.5" stroke-dasharray="2 4"/>
-        <path d="M28.0,203.9 C35.0,202.5 56.3,201.5 70.0,196.0 C83.7,190.5 96.7,179.5 110.0,170.9 C123.3,162.2 136.7,152.8 150.0,144.1 C163.3,135.5 176.7,126.3 190.0,119.0 C203.3,111.7 218.3,104.6 230.0,100.1 C241.7,95.7 250.0,91.8 260.0,92.3 C270.0,92.8 278.3,97.0 290.0,103.3 C301.7,109.6 316.7,121.1 330.0,130.0 C343.3,138.9 358.3,149.1 370.0,156.7 C381.7,164.3 390.0,171.4 400.0,175.6 C410.0,179.8 421.3,181.6 430.0,181.9 C438.7,182.1 448.3,177.9 452.0,177.1" fill="none" stroke="#0b1b2b" stroke-width="2.6" stroke-linecap="round"/>
-        <circle cx="95.0" cy="180.3" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="119.4" cy="164.6" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="142.9" cy="148.9" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="167.5" cy="133.1" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="193.3" cy="117.4" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="226.7" cy="101.7" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/>
-        <circle cx="370.9" cy="157.3" r="8" fill="#3fb8af" stroke="#fffdf8" stroke-width="2.5"/>
+        <line x1="270" y1="115.3" x2="460" y2="115.3" stroke="#b5654f" stroke-width="1.5" stroke-dasharray="2 4"/>
+        <text x="458" y="109.3" text-anchor="end" font-family="Inter" font-size="10" fill="#b5654f">buy-back never above this</text>
+        <path d="M28.0,196.0 C35.0,195.0 56.3,195.0 70.0,189.7 C83.7,184.5 96.7,174.5 110.0,164.6 C123.3,154.6 136.7,140.0 150.0,130.0 C163.3,120.0 177.5,111.1 190.0,104.9 C202.5,98.6 214.2,93.3 225.0,92.3 C235.8,91.2 244.2,93.1 255.0,98.6 C265.8,104.1 277.5,115.6 290.0,125.3 C302.5,135.0 316.7,147.3 330.0,156.7 C343.3,166.1 358.3,176.2 370.0,181.9 C381.7,187.5 390.0,188.9 400.0,190.5 C410.0,192.1 421.3,191.9 430.0,191.3 C438.7,190.6 448.3,187.4 452.0,186.6" fill="none" stroke="#0b1b2b" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="190" cy="104.9" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="225" cy="92.3" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="255" cy="98.6" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/>
+        <circle cx="415" cy="191.6" r="8" fill="#3fb8af" stroke="#fffdf8" stroke-width="2.5"/>
         <g font-family="Inter" font-size="11" font-weight="600">
-          <text x="128.9" y="114.3" text-anchor="end" fill="#a97c22">sells a little</text><text x="128.9" y="128.3" text-anchor="end" fill="#a97c22">at each step up</text>
-          <text x="462" y="127.3" text-anchor="end" fill="#1f8a83">buys it all back,</text><text x="462" y="141.3" text-anchor="end" fill="#1f8a83">1% cheaper or more</text>
+          <text x="176" y="88.3" text-anchor="end" fill="#a97c22">sells small slices</text><text x="176" y="102.3" text-anchor="end" fill="#a97c22">to buyers paying up</text>
+          <text x="468" y="150" text-anchor="end" fill="#1f8a83">buys it all back</text><text x="468" y="164" text-anchor="end" fill="#1f8a83">near the patient price</text>
         </g>
         <g transform="translate(20,250)" font-family="Inter" font-size="12" fill="#5d6b78">
           <circle cx="8" cy="0" r="6" fill="#d4a64a"/><text x="20" y="4">pool sells a slice</text>
           <circle cx="150" cy="0" r="6" fill="#3fb8af"/><text x="162" y="4">pool buys back</text>
-          <path d="M270 0 h22" stroke="#1f8a83" stroke-width="1.5" stroke-dasharray="2 4"/><text x="298" y="4">sell average − 1%</text>
+          <path d="M270 0 h22" stroke="#b5654f" stroke-width="1.5" stroke-dasharray="2 4"/><text x="298" y="4">sell average − 1%</text>
         </g>
-        <text x="20" y="282" font-family="Inter" font-size="10.5" fill="#8a96a1">Illustration only, not real price data. The pool never waits for 1 HIVE.</text>
+        <text x="20" y="282" font-family="Inter" font-size="10.5" fill="#8a96a1">Illustration only. Prices come from real trades, never from someone's bid.</text>
       </svg>
     </div>
 
@@ -306,14 +308,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <div class="card dark reveal">
         <h3>In Keelhaven <span class="tag teal">Working</span></h3>
         <!-- POOLED -->
-        <svg viewBox="0 0 480 260" role="img" aria-label="A keeled ship on the same price line; the pool sells a little on each rise and buys it back 1% cheaper or more, and a staircase shows each unit's value climbing">
+        <svg viewBox="0 0 480 260" role="img" aria-label="A keeled ship on the same price line; the pool sells small slices near each high and buys them back near the lows, and a staircase shows each unit's value climbing">
           <rect width="480" height="260" rx="14" fill="#12283d"/>
           <line x1="20" y1="150" x2="460" y2="150" stroke="#d4a64a" stroke-opacity=".5" stroke-dasharray="5 6"/>
           <!-- share value staircase -->
-          <path d="M20 232 H247 V222 H432 V210 H460" fill="none" stroke="#d4a64a" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M20 232 H247 V222 H432 V210 H460 V244 H20Z" fill="#d4a64a" opacity=".12"/>
-          <path d="M20.0,152.9 C24.2,151.0 35.8,147.1 45.0,141.4 C54.2,135.7 65.0,126.2 75.0,118.6 C85.0,111.0 95.8,101.9 105.0,95.7 C114.2,89.5 122.5,84.3 130.0,81.4 C137.5,78.6 143.0,77.6 150.0,78.6 C157.0,79.5 163.7,82.4 172.0,87.1 C180.3,91.9 191.2,101.4 200.0,107.1 C208.8,112.9 216.7,117.6 225.0,121.4 C233.3,125.2 241.7,130.0 250.0,130.0 C258.3,130.0 266.7,126.2 275.0,121.4 C283.3,116.7 291.7,108.6 300.0,101.4 C308.3,94.3 316.7,85.2 325.0,78.6 C333.3,71.9 342.5,65.2 350.0,61.4 C357.5,57.6 363.0,54.8 370.0,55.7 C377.0,56.7 384.0,61.4 392.0,67.1 C400.0,72.9 410.0,83.3 418.0,90.0 C426.0,96.7 433.0,103.3 440.0,107.1 C447.0,111.0 456.7,111.9 460.0,112.9" fill="none" stroke="#3fb8af" stroke-width="2.6" stroke-linejoin="round"/>
-          <circle cx="52.5" cy="135.7" r="5" fill="#d4a64a"/><circle cx="71.2" cy="121.4" r="5" fill="#d4a64a"/><circle cx="90.0" cy="107.1" r="5" fill="#d4a64a"/><circle cx="110.0" cy="92.9" r="5" fill="#d4a64a"/><circle cx="292.9" cy="107.1" r="5" fill="#d4a64a"/><circle cx="309.4" cy="92.9" r="5" fill="#d4a64a"/><circle cx="325.0" cy="78.6" r="5" fill="#d4a64a"/><circle cx="345.8" cy="64.3" r="5" fill="#d4a64a"/><circle cx="246.9" cy="128.9" r="7" fill="#3fb8af" stroke="#12283d" stroke-width="2"/><circle cx="431.7" cy="100.6" r="7" fill="#3fb8af" stroke="#12283d" stroke-width="2"/>
+          <path d="M20 232 H240 V222 H450 V210 H460" fill="none" stroke="#d4a64a" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M20 232 H240 V222 H450 V210 H460 V244 H20Z" fill="#d4a64a" opacity=".12"/>
+          <path d="M20.0,151.4 C25.0,149.3 40.0,146.0 50.0,138.6 C60.0,131.2 70.0,117.1 80.0,107.1 C90.0,97.1 100.0,84.8 110.0,78.6 C120.0,72.4 130.8,69.5 140.0,70.0 C149.2,70.5 155.8,74.0 165.0,81.4 C174.2,88.8 185.0,104.3 195.0,114.3 C205.0,124.3 215.8,136.2 225.0,141.4 C234.2,146.7 241.7,147.1 250.0,145.7 C258.3,144.3 265.8,140.5 275.0,132.9 C284.2,125.2 295.0,111.0 305.0,100.0 C315.0,89.0 325.8,74.0 335.0,67.1 C344.2,60.2 351.7,56.7 360.0,58.6 C368.3,60.5 376.7,69.3 385.0,78.6 C393.3,87.9 401.7,103.8 410.0,114.3 C418.3,124.8 426.7,136.4 435.0,141.4 C443.3,146.4 455.8,143.8 460.0,144.3" fill="none" stroke="#3fb8af" stroke-width="2.6" stroke-linejoin="round"/>
+          <circle cx="110" cy="78.6" r="5" fill="#d4a64a"/><circle cx="140" cy="70.0" r="5" fill="#d4a64a"/><circle cx="335" cy="67.1" r="5" fill="#d4a64a"/><circle cx="360" cy="58.6" r="5" fill="#d4a64a"/><circle cx="240" cy="145.0" r="7" fill="#3fb8af" stroke="#12283d" stroke-width="2"/><circle cx="450" cy="143.6" r="7" fill="#3fb8af" stroke="#12283d" stroke-width="2"/>
           <!-- ship with keel -->
           <g class="bob" transform="translate(110,60)"><path d="M-24 8 H24 L16 20 H-16Z" fill="#d4a64a"/><path d="M-1 8 V-14" stroke="#e9eef3" stroke-width="2"/><path d="M0 -14 L14 6 H0Z" fill="#e9eef3"/><path d="M-2 20 H2 L1 34 H-1Z" fill="#3fb8af"/></g>
           <g fill="#3fb8af"><path d="M230 26 q6 9 0 14 q-6-5 0-14z"/><path d="M430 32 q6 9 0 14 q-6-5 0-14z"/></g>
@@ -321,7 +323,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
         </svg>
         <ul class="ticks">
           <li class="yes">EDSI dividends in HIVE, shared by your units</li>
-          <li class="gold">Swings above 1 HIVE are put to work for the pool</li>
+          <li class="gold">Buyers who pay up are sold to, and the EDSI is bought back cheaper</li>
           <li class="gold">Gains raise the value of every unit you hold</li>
           <li class="yes">Hands-free: nothing to watch, nothing to click</li>
         </ul>
@@ -397,6 +399,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <p class="lead">When you join, your EDSI becomes units at what a unit is worth at that moment, after the 0.05% joining fee. Your units only change when you add more or withdraw.</p>
       <p>When the pool gains, nobody has to recalculate anything: each unit is simply worth a bit more. When you leave, your units are turned back into EDSI at what they're worth the moment you comment, minus 0.05%. Your percentage of the pool only changes when people join or leave, never because someone else was luckier with timing.</p>
         <p>Everything is counted in EDSI, so unit worth doesn't jump around with the market; it only rises when the pool books a gain. Your status shows it plainly: what you deposited, what you withdrew, what your units are worth now, and your profit.</p>
+        <p><strong>Bonus units while you stay.</strong> Joining and leaving fees and <code>pool</code> gifts go into a pool reserve that's shared across current holders as bonus units. They earn dividends and trading gains for you while you hold. When you leave, they stay with the people still in.</p>
     </div>
   </div>
 </section>
@@ -428,9 +431,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
         <form class="check" id="checkForm"><input id="who" placeholder="hive account name" autocomplete="off" aria-label="Hive account name"><button class="btn btn-brass" type="submit">Check</button></form>
         <table class="stat" id="statTable"><tbody>
           <tr><td>Units</td><td data-s="units">—</td></tr>
+          <tr><td>Bonus units while you stay</td><td data-s="bonus">—</td></tr>
           <tr><td>Each unit is worth</td><td data-s="unit">—</td></tr>
-          <tr><td>Deposited in total</td><td data-s="deposited">—</td></tr>
-          <tr><td>Withdrawn in total</td><td data-s="withdrawn">—</td></tr>
+          <tr><td>Deposited</td><td data-s="deposited">—</td></tr>
+          <tr><td>Withdrawn</td><td data-s="withdrawn">—</td></tr>
           <tr><td>Value now</td><td data-s="value">—</td></tr>
           <tr class="hl"><td>Profit</td><td data-s="profit">—</td></tr>
           <tr><td>Dividends received</td><td data-s="dividends">—</td></tr>
@@ -448,21 +452,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <div class="reveal">
       <span class="eyebrow">House rules</span>
       <h2>Everything that touches your EDSI</h2>
-      <p class="lead">Short, plain, and the same for everyone, including the operator's own deposits. The small joining and leaving fees stay in the pool, so the people who stay grow every time someone comes or goes.</p>
+      <p class="lead">Short, plain, and the same for everyone, including the operator's own deposits. The small joining and leaving fees go into the pool reserve and are shared as bonus units with the people who stay.</p>
     </div>
 
     <div class="fees reveal">
       <div class="fee"><b>1%</b><span>of trading gains</span></div>
       <div class="fee"><b>1%</b><span>of dividends received</span></div>
-      <div class="fee"><b>0.05%</b><span>to join, kept by the pool</span></div>
-      <div class="fee"><b>0.05%</b><span>to leave, kept by the pool</span></div>
+      <div class="fee"><b>0.05%</b><span>to join, shared as bonus units</span></div>
+      <div class="fee"><b>0.05%</b><span>to leave, shared as bonus units</span></div>
     </div>
 
     <div class="rules">
       <div class="rule reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1f8a83" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 8l9 6 9-6"/></svg></div>
         <h3>Joining: EDSI or SWAP.HIVE</h3>
-        <p><strong>Leave the memo empty</strong> and it's yours. To gift a friend, put their Hive name. EDSI is preferred; SWAP.HIVE is converted for you with a top bid. A memo of <code>pool</code> is a donation to everyone, with no units for you. Other tokens aren't deposits and are sent back by hand.</p>
+        <p><strong>Leave the memo empty</strong> and it's yours. To gift a friend, put their Hive name. EDSI is preferred; SWAP.HIVE is converted for you with a top bid. A memo of <code>pool</code> is a gift to the holders, shared as bonus units, with no units for you. Other tokens aren't deposits and are sent back by hand.</p>
       </div>
       <div class="rule reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1f8a83" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
@@ -496,7 +500,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <div class="reveal">
         <span class="eyebrow">Leaving the harbor</span>
         <h2>Withdrawals arrive in full, sometimes in parts</h2>
-        <p class="lead">Part of the pool may be in HIVE right after EDSI has risen. You get every EDSI that's available straight away, and the rest arrives when the pool buys EDSI back at least 1% below its sell price.</p>
+        <p class="lead">Part of the pool may be in HIVE right after EDSI has risen. You get every EDSI that's available straight away, and the rest arrives when the pool buys EDSI back, always below what it sold for.</p>
         <p>Each transfer's memo tells you what was sent and what's still to come, ending with <em>"withdrawal complete"</em>. The amount you're owed is locked in the moment you comment, and it's always paid in EDSI, not HIVE.</p>
       </div>
       <svg class="reveal" viewBox="0 0 480 280" role="img" aria-label="A dock where one crate of EDSI is delivered now and two outlined crates follow later, with a memo tag showing sent and remaining amounts">
@@ -525,7 +529,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <div class="risks">
       <div class="risk reveal"><h3>EDSI's price isn't guaranteed</h3><p>EDSI has always drifted back towards 1 HIVE, but there's no promise it always will. The pool counts in EDSI, so if EDSI falls against HIVE and stays down, your EDSI is worth less in HIVE, just as it would be in your wallet.</p></div>
       <div class="risk reveal"><h3>Gains depend on movement</h3><p>Quiet markets mean few trades and little or no trading gain. Some weeks there may be nothing extra at all.</p></div>
-      <div class="risk reveal"><h3>If EDSI rises and stays up</h3><p>The pool never buys back at a loss. If EDSI climbs and doesn't come back down, the part it sold stays in SWAP.HIVE, and that part of any withdrawal waits until the price returns.</p></div>
+      <div class="risk reveal"><h3>If EDSI rises and stays up</h3><p>The pool never buys back at a loss. If EDSI climbs and doesn't come back down, the part it sold (never more than a quarter of the pool) stays in SWAP.HIVE, and that part of any withdrawal waits until the price returns.</p></div>
       <div class="risk reveal"><h3>Dividends can be a little lower</h3><p>EDSI the pool has sold earns no dividends until it's bought back, so dividends per unit can sometimes be below what holding EDSI yourself would earn.</p></div>
       <div class="risk reveal"><h3>The operator holds the keys</h3><p>Funds sit in one Hive account controlled by the operator, and the bot's keys are stored with a cloud provider. You're trusting the operator and the code.</p></div>
       <div class="risk reveal"><h3>Cloud or node outages</h3><p>The pool runs 24/7 on a cloud service. If that service or the Hive-Engine nodes have a bad day, deposits, dividends and withdrawals simply wait until it's back.</p></div>
@@ -544,13 +548,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     </div>
     <div class="reveal">
       <details><summary>Do I still get EDSI dividends?</summary><p>Yes. The pool holds EDSI, so it receives EDSI dividends, and your share is paid to your wallet in HIVE (minus the 1% dividend fee), based on how long you've held your units since the last dividend.</p></details>
-      <details><summary>Can I deposit SWAP.HIVE?</summary><p>Yes. The pool places a top bid and converts it to EDSI for you, usually cheaper than buying EDSI yourself in a hurry. You get units as it fills. EDSI is still preferred, since withdrawals are paid in EDSI (only SWAP.HIVE that hasn't converted yet comes back as SWAP.HIVE).</p></details>
+      <details><summary>Can I deposit SWAP.HIVE?</summary><p>Yes. The pool bids for you near the price patient buyers pay, ahead of its own orders, and never takes expensive asks, so it's usually cheaper than buying EDSI yourself in a hurry. You get units as it fills. EDSI is still preferred, since withdrawals are paid in EDSI (only SWAP.HIVE that hasn't converted yet comes back as SWAP.HIVE).</p></details>
       <details><summary>What happens if I deposit right before a dividend?</summary><p>You get a share for the time you actually held, so about one day's worth if you joined the day before. The rest goes to the people who were in since the last dividend.</p></details>
-      <details><summary>How do I check my balance?</summary><p>Comment <code>!kh status</code> under the commands post, or type your account name in the checker above. Both show your units, what each unit is worth, what you deposited and withdrew, your profit and your dividends.</p></details>
-      <details><summary>Why are there joining and leaving fees?</summary><p>They're tiny (0.05% each way) and they stay in the pool. They reward the people who stay, since every arrival and departure leaves a little extra behind for them.</p></details>
+      <details><summary>How do I check my balance?</summary><p>Comment <code>!kh status</code> under the commands post, or type your account name in the checker above. Both show your units, your bonus units, what each unit is worth, what you deposited and withdrew, your profit and your dividends.</p></details>
+      <details><summary>Why are there joining and leaving fees?</summary><p>They're tiny (0.05% each way) and they go into the pool reserve, shared as bonus units with whoever is holding. Every arrival and departure leaves a little behind for the people who stay, and when you leave your bonus share stays for them too.</p></details>
       <details><summary>Why can't I withdraw in HIVE?</summary><p>The pool runs on EDSI, so you leave with EDSI. That keeps it fair for everyone, and you always know exactly what you'll get.</p></details>
       <details><summary>Can I add more later?</summary><p>Any time. New EDSI becomes units straight away and simply adds to what you have.</p></details>
-      <details><summary>Where do the fees go?</summary><p>The 1% on trading gains and 1% on dividends go to the operator (@dlmmqb) for running the pool. The 0.05% joining and leaving fees stay in the pool for investors.</p></details>
+      <details><summary>Where do the fees go?</summary><p>The 1% on trading gains and 1% on dividends go to the operator (@dlmmqb) for running the pool. The 0.05% joining and leaving fees go into the pool reserve, shared as bonus units with current holders.</p></details>
       <details><summary>Can the way it works change?</summary><p>Yes, Keelhaven keeps improving as we learn from the market and from you. When something that affects your EDSI changes, it's shared on Hive first, so you always have time to read it and decide what suits you.</p></details>
       <details><summary>Is Keelhaven part of the EDSI project?</summary><p>No. Keelhaven is an independent community pool that holds EDSI. It isn't run by, endorsed by or affiliated with the EDSI project or @edsi-pay.</p></details>
     </div>
@@ -607,12 +611,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       if (conv > 0) set('converting', fmt(conv, 4) + ' SWAP.HIVE');
       if (owe > 0) set('owed', fmt(owe) + ' EDSI');
       if (!s.inPool && s.inPool !== undefined) {
-        ['units','unit','deposited','withdrawn','value','profit','dividends'].forEach((k) => set(k, '—'));
+        ['units','bonus','unit','deposited','withdrawn','value','profit','dividends'].forEach((k) => set(k, '—'));
         note.textContent = conv > 0 ? `@${who}'s SWAP.HIVE is waiting as a top bid. Units appear as soon as it fills.` : `@${who} isn't in Keelhaven yet.`;
         return;
       }
       const sign = Number(s.profit) >= 0 ? '+' : '';
-      set('units', fmt(s.units, 4)); set('unit', unitWorth ? Number(unitWorth).toFixed(6) + ' EDSI' : '—');
+      set('units', fmt(s.units, 4)); set('bonus', Number(s.bonusUnits || 0) >= 0.0001 ? '+' + fmt(s.bonusUnits, 4) : 'none yet'); set('unit', unitWorth ? Number(unitWorth).toFixed(6) + ' EDSI' : '—');
       set('deposited', fmt(s.deposited) + ' EDSI'); set('withdrawn', fmt(s.withdrawn) + ' EDSI'); set('value', fmt(s.value) + ' EDSI');
       set('profit', `${sign}${fmt(s.profit)} EDSI (${sign}${s.profitPct}%)`); set('dividends', fmt(s.dividendsReceived) + ' HIVE');
       note.textContent = `@${who}, live. Profit = value now + withdrawn − deposited.`;
