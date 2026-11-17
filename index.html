@@ -251,25 +251,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
         <p>Keelhaven watches the market for you. When EDSI rises above 1 HIVE, the pool sells a little at each step up. When the price comes back down at least 1% below what it sold for, the pool buys that EDSI back. It never buys back at a loss, so each round trip ends with more EDSI than it started with, and that extra belongs to everyone in the pool, in proportion to their units.</p>
       </div>
       <!-- DRIFT CHART -->
-      <svg class="reveal" viewBox="0 0 480 300" role="img" aria-label="EDSI price drifting above and below 1 HIVE, with the pool selling a little at the highs and buying it back at the lows">
+      <svg class="reveal" viewBox="0 0 480 300" role="img" aria-label="EDSI price rising above 1 HIVE while the pool sells a little at each step, then the pool buys it all back once the price is 1% below its sell average, still above 1 HIVE">
         <rect width="480" height="300" rx="18" fill="#fffdf8" stroke="#d9cfbd"/>
-        <text x="20" y="40" font-family="Inter" font-size="13" font-weight="600" fill="#1a2633">EDSI price, drifting around 1 HIVE</text>
-        <rect x="20" y="104" width="440" height="46" fill="#e07a5f" opacity=".06"/>
-        <rect x="20" y="150" width="440" height="46" fill="#3fb8af" opacity=".07"/>
-        <text x="455" y="98" text-anchor="end" font-family="Inter" font-size="11" fill="#b5654f">above 1 · pool sells a little</text>
-        <text x="455" y="214" text-anchor="end" font-family="Inter" font-size="11" fill="#1f8a83">back down · pool buys it back</text>
-        <line x1="20" y1="150" x2="460" y2="150" stroke="#a97c22" stroke-dasharray="5 6"/>
-                <path d="M20,150.0 L30,133.1 L40,120.6 L50,114.6 L60,114.6 L70,117.8 L80,121.0 L90,122.8 L100,124.3 L110,128.1 L120,136.6 L130,150.3 L140,166.8 L150,181.7 L160,191.1 L170,192.8 L180,187.9 L190,179.6 L200,171.4 L210,165.3 L220,160.7 L230,155.1 L240,146.3 L250,133.8 L260,119.9 L270,108.7 L280,104.1 L290,107.5 L300,117.5 L310,130.4 L320,142.2 L330,150.8 L340,156.5 L350,161.6 L360,168.5 L370,177.7 L380,187.2 L390,193.5 L400,193.0 L410,184.7 L420,170.5 L430,154.5 L440,140.9 L450,132.1 L460,127.7" fill="none" stroke="#0b1b2b" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
-        <g font-family="Inter" font-size="10" font-weight="600">
-          <circle cx="55" cy="114.6" r="8" fill="#d4a64a"/><circle cx="280" cy="104.1" r="8" fill="#d4a64a"/>
-          <circle cx="170" cy="192.8" r="8" fill="#3fb8af"/><circle cx="390" cy="193.5" r="8" fill="#3fb8af"/>
+        <text x="20" y="40" font-family="Inter" font-size="13" font-weight="600" fill="#1a2633">How the pool trades the drift</text>
+        <line x1="20" y1="196.0" x2="460" y2="196.0" stroke="#a97c22" stroke-dasharray="5 6"/>
+        <text x="458" y="211.0" text-anchor="end" font-family="Inter" font-size="10.5" font-weight="600" fill="#a97c22">1 HIVE</text>
+        <line x1="250" y1="157.3" x2="460" y2="157.3" stroke="#1f8a83" stroke-width="1.5" stroke-dasharray="2 4"/>
+        <path d="M28.0,203.9 C35.0,202.5 56.3,201.5 70.0,196.0 C83.7,190.5 96.7,179.5 110.0,170.9 C123.3,162.2 136.7,152.8 150.0,144.1 C163.3,135.5 176.7,126.3 190.0,119.0 C203.3,111.7 218.3,104.6 230.0,100.1 C241.7,95.7 250.0,91.8 260.0,92.3 C270.0,92.8 278.3,97.0 290.0,103.3 C301.7,109.6 316.7,121.1 330.0,130.0 C343.3,138.9 358.3,149.1 370.0,156.7 C381.7,164.3 390.0,171.4 400.0,175.6 C410.0,179.8 421.3,181.6 430.0,181.9 C438.7,182.1 448.3,177.9 452.0,177.1" fill="none" stroke="#0b1b2b" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="95.0" cy="180.3" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="119.4" cy="164.6" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="142.9" cy="148.9" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="167.5" cy="133.1" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="193.3" cy="117.4" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/><circle cx="226.7" cy="101.7" r="6" fill="#d4a64a" stroke="#fffdf8" stroke-width="2"/>
+        <circle cx="370.9" cy="157.3" r="8" fill="#3fb8af" stroke="#fffdf8" stroke-width="2.5"/>
+        <g font-family="Inter" font-size="11" font-weight="600">
+          <text x="128.9" y="114.3" text-anchor="end" fill="#a97c22">sells a little</text><text x="128.9" y="128.3" text-anchor="end" fill="#a97c22">at each step up</text>
+          <text x="462" y="127.3" text-anchor="end" fill="#1f8a83">buys it all back,</text><text x="462" y="141.3" text-anchor="end" fill="#1f8a83">1% cheaper or more</text>
         </g>
         <g transform="translate(20,250)" font-family="Inter" font-size="12" fill="#5d6b78">
-          <circle cx="8" cy="0" r="6" fill="#3fb8af"/><text x="20" y="4">pool buys back, cheaper</text>
-          <circle cx="190" cy="0" r="6" fill="#d4a64a"/><text x="202" y="4">pool sells, higher</text>
-          <path d="M360 0 h22" stroke="#a97c22" stroke-dasharray="5 4"/><text x="388" y="4">1 HIVE</text>
+          <circle cx="8" cy="0" r="6" fill="#d4a64a"/><text x="20" y="4">pool sells a slice</text>
+          <circle cx="150" cy="0" r="6" fill="#3fb8af"/><text x="162" y="4">pool buys back</text>
+          <path d="M270 0 h22" stroke="#1f8a83" stroke-width="1.5" stroke-dasharray="2 4"/><text x="298" y="4">sell average − 1%</text>
         </g>
-        <text x="20" y="282" font-family="Inter" font-size="10.5" fill="#8a96a1">Illustration only, not real price data.</text>
+        <text x="20" y="282" font-family="Inter" font-size="10.5" fill="#8a96a1">Illustration only, not real price data. The pool never waits for 1 HIVE.</text>
       </svg>
     </div>
 
@@ -306,15 +306,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <div class="card dark reveal">
         <h3>In Keelhaven <span class="tag teal">Working</span></h3>
         <!-- POOLED -->
-        <svg viewBox="0 0 480 260" role="img" aria-label="A keeled ship on the same price line; the pool sells a little at the highs and buys it back at the lows, and a staircase shows each unit's value climbing">
+        <svg viewBox="0 0 480 260" role="img" aria-label="A keeled ship on the same price line; the pool sells a little on each rise and buys it back 1% cheaper or more, and a staircase shows each unit's value climbing">
           <rect width="480" height="260" rx="14" fill="#12283d"/>
-          <line x1="20" y1="130" x2="460" y2="130" stroke="#d4a64a" stroke-opacity=".5" stroke-dasharray="5 6"/>
+          <line x1="20" y1="150" x2="460" y2="150" stroke="#d4a64a" stroke-opacity=".5" stroke-dasharray="5 6"/>
           <!-- share value staircase -->
-          <path d="M20 232 H170 V224 H280 V214 H390 V204 H460" fill="none" stroke="#d4a64a" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M20 232 H170 V224 H280 V214 H390 V204 H460 V244 H20Z" fill="#d4a64a" opacity=".12"/>
-          <g transform="translate(0,-20)"><path d="M20,150.0 L30,133.1 L40,120.6 L50,114.6 L60,114.6 L70,117.8 L80,121.0 L90,122.8 L100,124.3 L110,128.1 L120,136.6 L130,150.3 L140,166.8 L150,181.7 L160,191.1 L170,192.8 L180,187.9 L190,179.6 L200,171.4 L210,165.3 L220,160.7 L230,155.1 L240,146.3 L250,133.8 L260,119.9 L270,108.7 L280,104.1 L290,107.5 L300,117.5 L310,130.4 L320,142.2 L330,150.8 L340,156.5 L350,161.6 L360,168.5 L370,177.7 L380,187.2 L390,193.5 L400,193.0 L410,184.7 L420,170.5 L430,154.5 L440,140.9 L450,132.1 L460,127.7" fill="none" stroke="#3fb8af" stroke-width="2.6" stroke-linejoin="round"/></g>
-          <circle cx="55" cy="94.6" r="7" fill="#d4a64a"/><circle cx="280" cy="84.1" r="7" fill="#d4a64a"/>
-          <circle cx="170" cy="172.8" r="7" fill="#3fb8af" stroke="#12283d" stroke-width="2"/><circle cx="390" cy="173.5" r="7" fill="#3fb8af" stroke="#12283d" stroke-width="2"/>
+          <path d="M20 232 H247 V222 H432 V210 H460" fill="none" stroke="#d4a64a" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M20 232 H247 V222 H432 V210 H460 V244 H20Z" fill="#d4a64a" opacity=".12"/>
+          <path d="M20.0,152.9 C24.2,151.0 35.8,147.1 45.0,141.4 C54.2,135.7 65.0,126.2 75.0,118.6 C85.0,111.0 95.8,101.9 105.0,95.7 C114.2,89.5 122.5,84.3 130.0,81.4 C137.5,78.6 143.0,77.6 150.0,78.6 C157.0,79.5 163.7,82.4 172.0,87.1 C180.3,91.9 191.2,101.4 200.0,107.1 C208.8,112.9 216.7,117.6 225.0,121.4 C233.3,125.2 241.7,130.0 250.0,130.0 C258.3,130.0 266.7,126.2 275.0,121.4 C283.3,116.7 291.7,108.6 300.0,101.4 C308.3,94.3 316.7,85.2 325.0,78.6 C333.3,71.9 342.5,65.2 350.0,61.4 C357.5,57.6 363.0,54.8 370.0,55.7 C377.0,56.7 384.0,61.4 392.0,67.1 C400.0,72.9 410.0,83.3 418.0,90.0 C426.0,96.7 433.0,103.3 440.0,107.1 C447.0,111.0 456.7,111.9 460.0,112.9" fill="none" stroke="#3fb8af" stroke-width="2.6" stroke-linejoin="round"/>
+          <circle cx="52.5" cy="135.7" r="5" fill="#d4a64a"/><circle cx="71.2" cy="121.4" r="5" fill="#d4a64a"/><circle cx="90.0" cy="107.1" r="5" fill="#d4a64a"/><circle cx="110.0" cy="92.9" r="5" fill="#d4a64a"/><circle cx="292.9" cy="107.1" r="5" fill="#d4a64a"/><circle cx="309.4" cy="92.9" r="5" fill="#d4a64a"/><circle cx="325.0" cy="78.6" r="5" fill="#d4a64a"/><circle cx="345.8" cy="64.3" r="5" fill="#d4a64a"/><circle cx="246.9" cy="128.9" r="7" fill="#3fb8af" stroke="#12283d" stroke-width="2"/><circle cx="431.7" cy="100.6" r="7" fill="#3fb8af" stroke="#12283d" stroke-width="2"/>
           <!-- ship with keel -->
           <g class="bob" transform="translate(110,60)"><path d="M-24 8 H24 L16 20 H-16Z" fill="#d4a64a"/><path d="M-1 8 V-14" stroke="#e9eef3" stroke-width="2"/><path d="M0 -14 L14 6 H0Z" fill="#e9eef3"/><path d="M-2 20 H2 L1 34 H-1Z" fill="#3fb8af"/></g>
           <g fill="#3fb8af"><path d="M230 26 q6 9 0 14 q-6-5 0-14z"/><path d="M430 32 q6 9 0 14 q-6-5 0-14z"/></g>
